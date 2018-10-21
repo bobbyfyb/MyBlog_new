@@ -39,11 +39,23 @@ def detail(request,pk):
              }
     return render(request,'blog/detail.html',context=context)
 
-def archives(request,year,month):
-    post_list=Post.objects.filter(created_time__year=year,
-                                  created_time__month=month
-                                  ).order_by('-created_time')
-    return render(request,'blog/index.html',context={'post_list':post_list})
+#处理归档的视图函数
+#def archives(request,year,month):
+#    post_list=Post.objects.filter(created_time__year=year,
+#                                  created_time__month=month
+#                                  ).order_by('-created_time')
+#    return render(request,'blog/index.html',context={'post_list':post_list})
+
+#处理归档的类视图
+class ArchivesView(ListView):
+    model=Post
+    template_name='blog/index.html'
+    context_object_name='post_list'
+
+    def get_queryset(self):
+        year=self.kwargs.get('year')
+        month=self.kwargs.get('month')
+        return super(ArchivesView,self).get_queryset().filter(created_time__year=year,created_time__month=month)
 
 
 #处理分类的视图函数
