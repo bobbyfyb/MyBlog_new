@@ -6,14 +6,14 @@ import markdown
 import pygments
 # Create your views here.
 
-#视图函数
+#处理主页文章列表的视图函数
 #def index(request):
 #   post_list=Post.objects.all()
 #   return render(request,'blog/index.html',context={
 #       'post_list':post_list
 #       })
 
-#类视图
+#处理主页文章列表的类视图
 class IndexView(ListView):
     model=Post
     template_name='blog/index.html'
@@ -45,7 +45,19 @@ def archives(request,year,month):
                                   ).order_by('-created_time')
     return render(request,'blog/index.html',context={'post_list':post_list})
 
-def category(request,pk):
-    cate=get_object_or_404(Category,pk=pk)
-    post_list=Post.objects.filter(category=cate).order_by('-created_time')
-    return render(request,'blog/index.html',context={'post_list':post_list})
+
+#处理分类的视图函数
+#def category(request,pk):
+#    cate=get_object_or_404(Category,pk=pk)
+#    post_list=Post.objects.filter(category=cate).order_by('-created_time')
+#    return render(request,'blog/index.html',context={'post_list':post_list})
+
+#处理分类的类视图
+class CategoryView(ListView):
+    model=Post
+    template_name='blog/index.html'
+    context_object_name='post_list'
+
+    def get_queryset(self):
+        cate=get_object_or_404(Category,pk=self.kwargs.get('pk'))
+        return super(CategoryView,self).get_queryset().filter(category=cate)
