@@ -1,15 +1,23 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Post,Category
 from comments.forms import CommentForm
+from django.views.generic import ListView
 import markdown
 import pygments
 # Create your views here.
 
-def index(request):
-   post_list=Post.objects.all()
-   return render(request,'blog/index.html',context={
-       'post_list':post_list
-       })
+#视图函数
+#def index(request):
+#   post_list=Post.objects.all()
+#   return render(request,'blog/index.html',context={
+#       'post_list':post_list
+#       })
+
+#类视图
+class IndexView(ListView):
+    model=Post
+    template_name='blog/index.html'
+    context_object_name='post_list'
 
 def detail(request,pk):
     post=get_object_or_404(Post,pk=pk)
