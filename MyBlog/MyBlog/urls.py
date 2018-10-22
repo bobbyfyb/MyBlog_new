@@ -5,7 +5,7 @@ Definition of urls for MyBlog.
 from datetime import datetime
 from django.conf.urls import url
 import django.contrib.auth.views
-
+from blog.feeds import AllPostsRssFeed
 import app.forms
 import app.views
 import blog.urls
@@ -41,6 +41,7 @@ urlpatterns = [
         name='logout'),
     url(r'',include(blog.urls)),
     url(r'',include('comments.urls')),
+    url(r'^all/rss/$', AllPostsRssFeed(), name='rss'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

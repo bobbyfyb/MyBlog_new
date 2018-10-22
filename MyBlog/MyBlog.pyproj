@@ -38,6 +38,9 @@
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="blog\admin.py" />
     <Compile Include="blog\apps.py" />
+    <Compile Include="blog\feeds.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="blog\migrations\__init__.py" />
     <Compile Include="blog\models.py" />
     <Compile Include="blog\templatetags\blog_tags.py">
