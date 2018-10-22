@@ -11,6 +11,8 @@ class Comment(models.Model):
     created_time = models.DateTimeField(auto_now_add=True)
 
     post = models.ForeignKey('blog.Post')
+  
+
 
     def __str__(self):
         return self.text[:20]
