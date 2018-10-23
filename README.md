@@ -10,6 +10,29 @@
 ## 参考教程：
   - [Django博客教程](https://www.zmrenwu.com/post/2/ "django博客教程")
   
- ## 实际效果：
-    [Farron Keep](http://39.107.71.69 "MyBlog")
+
+## Introduction
+   A personal blog website buliding on Django framework with python3.Easy for the beginner.Using 
+   the build-in sever and sqlite database which are gaven by Django itself.
+   
+## Working enviornment
+  - python3.6
+  - django 1.11.10
+  
+## Tutorial(chinese)
+  - [Django博客教程](https://www.zmrenwu.com/post/2/ "django博客教程")
+  
+  
+## 概要
+　　python3とDjangoに基づく個人ブログサイト。初心者向けの簡単なプロジェクト。Djangoの開発サーバーとSQLiteデータベースを使用して、
+  　他のサーバーとデータベースは必要しない。
+   
+## 動作環境
+  - python3.6
+  - django 1.11.10
+  
+## 参考資料（中国語）
+- [Django博客教程](https://www.zmrenwu.com/post/2/ "django博客教程")
+
+
 
