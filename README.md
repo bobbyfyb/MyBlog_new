@@ -11,6 +11,11 @@
   - [Django博客教程](https://www.zmrenwu.com/post/2/ "django博客教程")
   
 
+
+
+
+
+
 ## Introduction
    A personal blog website buliding on Django framework with python3.Easy for the beginner.Using 
    the build-in sever and sqlite database which are gaven by Django itself.
@@ -22,7 +27,12 @@
 ## Tutorial(chinese)
   - [Django博客教程](https://www.zmrenwu.com/post/2/ "django博客教程")
   
-  
+ 
+ 
+ 
+ 
+ 
+ 
 ## 概要
 　　python3とDjangoに基づく個人ブログサイト。初心者向けの簡単なプロジェクト。Djangoの開発サーバーとSQLiteデータベースを使用して、
   　他のサーバーとデータベースは必要しない。
